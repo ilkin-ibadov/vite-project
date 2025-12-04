@@ -1,17 +1,15 @@
-import { useParams, useLocation } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
+import api from "../utils/axios"
 
 const ProductDetails = () => {
     const [productDetails, setProductDetails] = useState({})
-    const location = useLocation()
-    const { isProduct } = location.state
     const { id } = useParams()
 
     const getProductDetails = async () => {
         try {
-            const res = await fetch(`https://ilkinibadov.com/api/v1/products/${id}/details`)
-            if (res.ok) {
-                const data = await res.json()
+            const { data, statusText } = await api.get(`https://ilkinibadov.com/api/v1/products/${id}/details`)
+            if (statusText === "OK") {
                 setProductDetails(data)
             }
         } catch (error) {
@@ -20,7 +18,6 @@ const ProductDetails = () => {
     }
 
     useEffect(() => {
-        console.log(isProduct)
         getProductDetails()
     }, [id])
 

@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const NotFound = () => {
     const navigate = useNavigate()
@@ -15,7 +15,6 @@ const NotFound = () => {
     return (
         <div className='w-full h-screen flex flex-col justify-center items-center text-2xl font-semibold'>
             <h3>Page you're looking for doesn't exist</h3>
-            {/* <Link className="text-base font-medium text-white bg-red-700 px-4 py-2 mt-5" to="/">Go to Homepage</Link> */}
         </div>
     )
 }
