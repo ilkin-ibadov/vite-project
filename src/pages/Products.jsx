@@ -29,7 +29,7 @@ const Products = () => {
 
     return (
         <div className={`${isDarkmodeActive ? "bg-slate-900 text-white" : "bg-white text-black"} transition-all duration-200`}>
-            <h1 className="m-5 text-2xl">{t("loginTitle")}</h1>
+            <h1 className="m-5 text-2xl text-red-600">{t("loginTitle")}</h1>
             <div className="w-full flex justify-center py-5">
                 <input className={`border border-zinc-300 p-3 min-w-[300px]`} placeholder="Search for any product.." type="text" value={searchterm} onChange={(e) => {
                     setSearchterm(e.target.value)
